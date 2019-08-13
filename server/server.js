@@ -1,21 +1,24 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const path = require('path');
 const fileOperations = require('./fileOperations');
 const app = express();
 const port = 3000;
 
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: false }));
 
-// app.get('/', function(req, res, next) {
-//   console.log(req.body);
-// });
+app.get('/', function(req, res, next) {
+  console.log(req.body);
+});
 
 app.post('/', function(req, res, next) { // for submitting the JSON text
+  let filename = `${String(Date.now())}.csv`;
   fileOperations.convertJSONtoCSV(req.body.jsontext)
   .then(function(text) {
-    fileOperations.makeCSVfile(text, `${String(Date.now())}.csv`, res);
+    fileOperations.makeCSVfile(text, filename, res);
   })
   .then(function(){
+    res.attachment(path.join(__dirname, 'csv',`${filename}`));
     res.send();
     next();
   })

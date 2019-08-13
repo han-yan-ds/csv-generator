@@ -3,7 +3,7 @@ const path = require('path');
 const csvSubfolder = 'csv';
 
 var __convertJSONtoCSV = function(json) {
-
+  //actually do the parsing, write later
 }
 
 var convertJSONtoCSV = function(json) {
@@ -16,13 +16,8 @@ var convertJSONtoCSV = function(json) {
 
 var makeCSVfile = function(string, filename, res) {
   let filePath = path.join(__dirname, csvSubfolder, filename);
-  fs.writeFile(filePath, string, 'utf8', function(err) {
+  fs.writeFile(filePath, string, 'utf8', function(err, data) {
     if (err) { console.log('fs.writeFile error', err); }
-    else {
-      res.attachment(path.join(__dirname, csvSubfolder, filename), function(err) {
-        if (err) { console.log('res.attachment error', err); }
-      });
-    }
   });
 }
 
