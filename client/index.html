@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CSV Generator MiniApp</title>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+  </head>
+
+  <body>
+    <form id=jsonform action='http://localhost:3000/' method='post'><!-- should I include an action= inside this form tag? -->
+      Enter JSON<br>
+      <textarea form='jsonform' name='jsontext' cols = 110 rows=40></textarea>
+      <!-- <input type='submit' id='submitbutton' value='Submit!'> -->
+      <button id='submitbutton'>Submit!</button>
+    </form>
+  </body>
+</html>

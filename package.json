@@ -1,0 +1,29 @@
+{
+  "name": "package.json",
+  "version": "1.0.0",
+  "description": "package.json for CSV generator",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/han-yan-ds/csv-generator.git"
+  },
+  "keywords": [
+    "miniapps",
+    "miniapp",
+    "csv"
+  ],
+  "author": "Han Yan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/han-yan-ds/csv-generator/issues"
+  },
+  "homepage": "https://github.com/han-yan-ds/csv-generator#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "underscore": "^1.9.1",
+    "request": "^2.34.0"
+  }
+}
