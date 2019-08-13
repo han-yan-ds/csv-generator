@@ -19,7 +19,7 @@ var makeCSVfile = function(string, filename, res) {
   fs.writeFile(filePath, string, 'utf8', function(err) {
     if (err) { console.log('fs.writeFile error', err); }
     else {
-      res.download(path.join(__dirname, csvSubfolder, filename), function(err) {
+      res.attachment(path.join(__dirname, csvSubfolder, filename), function(err) {
         if (err) { console.log('res.attachment error', err); }
       });
     }

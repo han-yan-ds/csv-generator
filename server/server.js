@@ -6,9 +6,9 @@ const port = 3000;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.get('/', function(req, res, next) {
-  console.log(req.body);
-});
+// app.get('/', function(req, res, next) {
+//   console.log(req.body);
+// });
 
 app.post('/', function(req, res, next) { // for submitting the JSON text
   fileOperations.convertJSONtoCSV(req.body.jsontext)
